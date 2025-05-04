@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAD360: Tasawwur Islam T4 & T5</title>
+  <style>
+    body { font-family: sans-serif; background: #eef2f3; margin: 0; padding: 0; }
+    header { background: #2e7d32; color: white; padding: 20px; text-align: center; }
+    nav { background: #388e3c; padding: 10px; text-align: center; }
+    nav button { margin: 5px; padding: 10px 20px; border: none; background: #66bb6a; color: white; cursor: pointer; }
+    nav button:hover { background: #81c784; }
+    section { padding: 20px; display: none; }
+    section.active { display: block; }
+    footer { background: #2e7d32; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; }
+    .card { background: white; padding: 15px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PAD360: Inovasi Pembelajaran Tasawwur Islam</h1>
+    <p>Tingkatan 4 & 5 | Modul Interaktif</p>
+  </header>
+  <nav>
+    <button onclick="showSection('t4')">Nota Tingkatan 4</button>
+    <button onclick="showSection('t5')">Nota Tingkatan 5</button>
+    <button onclick="showSection('aktiviti')">Aktiviti Interaktif</button>
+  </nav>
+
+  <section id="t4" class="active">
+    <h2>Nota Tasawwur Islam Tingkatan 4</h2>
+    <div class="card"><strong>Bab 1:</strong> Islam Sebagai al-Din - Konsep, prinsip dan aplikasi dalam kehidupan.</div>
+    <div class="card"><strong>Bab 2:</strong> Akidah Menurut Islam - Rukun iman, pengukuhan iman dan kesannya.</div>
+    <div class="card"><strong>Bab 3:</strong> Ibadah Menurut Islam - Rukun Islam, ibadah wajib dan sunat.</div>
+    <div class="card"><strong>Bab 4:</strong> Akhlak Menurut Islam - Akhlak mahmudah dan mazmumah.</div>
+    <div class="card"><strong>Bab 5:</strong> Prinsip Pandangan Hidup Islam - Panduan Islam sebagai cara hidup.
+    </div>
+    <!-- Tambah bab seterusnya jika perlu -->
+  </section>
+
+  <section id="t5">
+    <h2>Nota Tasawwur Islam Tingkatan 5</h2>
+    <div class="card"><strong>Bab 1:</strong> Sistem Ekonomi Islam - Prinsip, konsep halal, riba, zakat dan wakaf.</div>
+    <div class="card"><strong>Bab 2:</strong> Sistem Kewangan Islam - Institusi kewangan, prinsip dan produk.</div>
+    <div class="card"><strong>Bab 3:</strong> Sistem Perundangan Islam - Qisas, hudud, ta’zir, hikmah pelaksanaan.</div>
+    <div class="card"><strong>Bab 4:</strong> Sistem Kehakiman Islam - Proses kehakiman dan keadilan Islam.</div>
+    <div class="card"><strong>Bab 5:</strong> Sistem Pemerintahan Islam - Konsep khilafah dan peranan pemerintah.</div>
+  </section>
+
+  <section id="aktiviti">
+    <h2>Aktiviti Interaktif</h2>
+    <div class="card">
+      <p><strong>Video Pengenalan:</strong></p>
+      <a href="https://www.youtube.com/watch?v=OYdgd7ImQYo" target="_blank">Tonton Video Masyarakat Madani</a>
+    </div>
+    <div class="card">
+      <p><strong>Kuiz Interaktif:</strong></p>
+      <a href="https://forms.gle/7UZ5ZYRZ1ZKzZYxC9" target="_blank">Jawab Kuiz di Google Forms</a>
+    </div>
+    <div class="card">
+      <p><strong>Aktiviti Kolaboratif:</strong></p>
+      <a href="https://padlet.com" target="_blank">Tulis pandangan anda di Padlet</a>
+    </div>
+    <div class="card">
+      <p><strong>Tugasan Mini:</strong></p>
+      <a href="https://www.canva.com" target="_blank">Reka Poster Digital di Canva</a>
+    </div>
+    <div class="card">
+      <p><strong>Refleksi Pembelajaran:</strong></p>
+      <a href="https://forms.gle/ABCDEF1234567890" target="_blank">Isi Borang Refleksi</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 PAD360 Inovasi Pembelajaran | Versi Demo
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
