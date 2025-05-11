@@ -1,2 +1,241 @@
-<a href="example.com">example</a>
-<b>test</b>
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PAD360 PEMBELAJARAN INTERAKTIF DIGITAL</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    h1 {
+      font-size: 2.5rem;
+      animation: bounce 3s infinite;
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+    .menu-button button {
+      background-color: #f0db4f;
+      color: #000;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .music-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+    .music-button button {
+      background-color: transparent;
+      border: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: fixed;
+      top: 60px;
+      left: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      border-radius: 10px;
+      display: none;
+      flex-direction: column;
+    }
+    .dropdown a {
+      color: #fff;
+      text-decoration: none;
+      margin: 5px 0;
+      background-color: #f0db4f;
+      color: #000;
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .dropdown a:hover {
+      background-color: #ffe15c;
+    }
+    .submenu {
+      display: none;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+    .submenu a {
+      background-color: #ffe15c;
+      color: #000;
+      margin: 3px 0;
+      padding: 0.3rem 0.8rem;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* SCROLLABLE KUIZ T4 SUBMENU */
+    #kuizT4, #kuizT5 {
+      display: none;
+      flex-direction: column;
+      margin-top: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      background-color: #fff8dc;
+      padding: 5px;
+      border-radius: 8px;
+    }
+
+    section.menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .menu-item {
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .menu-item:hover {
+      background: rgba(255,255,255,0.25);
+      transform: scale(1.03);
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    h2 {
+      text-align: center;
+      border-bottom: 2px solid #fff;
+      margin-top: 3rem;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- MENU BUTTON -->
+  <div class="menu-button">
+    <button onclick="toggleDropdown()">MENU</button>
+    <div id="dropdown" class="dropdown">
+      <a href="#" onclick="toggleSubmenu('submenu4')">Tingkatan 4</a>
+      <div id="submenu4" class="submenu">
+        <a href="#" onclick="toggleSubmenu('kuizT4')">Kuiz</a>
+        <div id="kuizT4" class="submenu">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIG-BXPoi1uKXQ595C9If1jbwzBenE12MgvmCqjhcMc-EOvg/viewform" target="_blank">Pelajaran 1</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-dJSv0oUuHLHN1veDTSyfFND1CsSSkZSh1Z25pncohDBjlw/viewform" target="_blank">Pelajaran 2</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_TxqBrxlU3XDG58fPET6b4KkwLMLq9MMhyujKNXuwOhqyhQ/viewform" target="_blank">Pelajaran 3</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXThqIHQtXXksOWlCnLbdf3L9pgWCjVZLyP3fHNitkeZ-Jjw/viewform" target="_blank">Pelajaran 4</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevZzbo_3FDOh7yRoKWZHUpikJcKxtdBj6CdCgKV_0mQg8BjQ/viewform" target="_blank">Pelajaran 5</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7zS0sT7FZIblunGV2xrZLNj4zoxSZF29kl5wPc4NlESz5bQ/viewform" target="_blank">Pelajaran 6</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevAP9DRBI9cZZigkc47KOAdRUo9mftU3SHU9CuqspiIPEq2g/viewform" target="_blank">Pelajaran 7</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3alJqILtKdUwNqEZxYPfJ2bAc_ycMpVmRjw8zd5zrLb_2Bw/viewform" target="_blank">Pelajaran 8</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1mLkNjNNWt8SJXeU9Kyphp0EwZe4340pYuI05CufsDGt7qg/viewform" target="_blank">Pelajaran 9</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSctrPZTWS_GUlqmU19ciKxsn2CKQxOpQ1-URh7vTsoKUZycfw/viewform" target="_blank">Pelajaran 10</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhPWciEqM1bEtXufbczaDyZmKzOQ9okav5G1C_osCV2evl8w/viewform" target="_blank">Pelajaran 11</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScUvwHxXC42eJhjXGTEcyySbF0Oyp4nDtJ2dz9Ol6at4O3x6g/viewform" target="_blank">Pelajaran 12</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScMcnKMNrldkhqbltWHaXoqkF0vLbEkJ_EJ_xMJps-Wnav3eg/viewform" target="_blank">Pelajaran 13</a>
+        </div>
+        <a href="#">Permainan Interaktif</a>
+        <a href="#" onclick="toggleMusic()">Lagu</a>
+      </div>
+      <a href="#" onclick="toggleSubmenu('submenu5')">Tingkatan 5</a>
+      <div id="submenu5" class="submenu">
+        
+        <a href="#" onclick="toggleSubmenu('kuizT5')">Kuiz</a>
+        <div id="kuizT5" class="submenu">
+                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSehvxevGugPozyFo064_7pq3q_YLge653vzpWTiSBMoWVDb1Q/viewform?usp=header " target="_blank">Pelajaran 1</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEY8oQLkSj35ymh4B0DyEec1-D6eMEUQO4JF41dFWXri_yAg/viewform?usp=header " target="_blank">Pelajaran 2</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNPAvvr1UFTdx_zHYDAewDUL_Qx61QXZAQ6HQF8fr7RLBl7A/viewform?usp=header " target="_blank">Pelajaran 3</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXThqIHQtXXksOWlCnLbdf3L9pgWCjVZLyP3fHNitkeZ-Jjw/viewform?usp=header " target="_blank">Pelajaran 4</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScHhQLUZZdym2b5Y5YmdG9gW2ihmwBmXAqQyduQGZj7sF-G2A/viewform?usp=header " target="_blank">Pelajaran 5</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOe580_qk66v0n0uyUlQXdcRCVELdo2bACsHvMzA9NHfuszw/viewform?usp=header " target="_blank">Pelajaran 6</a>
+        </div>
+
+        <a href="#">Permainan Interaktif</a>
+        <a href="#" onclick="toggleMusic()">Lagu</a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <h1>PAD360 PEMBELAJARAN INTERAKTIF DIGITAL</h1>
+    <p>Subjek: Tasawwur Islam Tingkatan 4 & 5</p>
+  </header>
+
+  <h2>Tingkatan 4</h2>
+  <section class="menu">
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1-xP0Hu_9OMhEzCoydBqSthcPpTyutSNl/view" target="_blank">Pelajaran 1</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1WdxV6W10A1nEeKDjg4UUjXTqmfanacQt/view" target="_blank">Pelajaran 2</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1D6uqsLJofADqIm5bO5zoShznbVCVO8oZ/view" target="_blank">Pelajaran 3</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1oTIT_7lIpoD0sj6YvPtFernYk4tMn_v4/view" target="_blank">Pelajaran 4</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1EeK9plVRfKInqySYPa3GRWw7khjP0Q_z/view" target="_blank">Pelajaran 5</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1GgzP3_WzbtnODGHVC0V2iCSo3Uah4SP9/view" target="_blank">Pelajaran 6</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/12O2B7yc1EBZ4L_x0uCjeg4iQ9GANNwT1/view" target="_blank">Pelajaran 7</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1qHL9hi2T0SLfMrzh8k0OceTrdmpsNdSF/view" target="_blank">Pelajaran 8</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1prS9-XlwHCVw4MlVXHPsAPrdM1zU8xNA/view" target="_blank">Pelajaran 9</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1bxUcdxKcZZSjUo1S3zPU8POXBPKjpi6f/view" target="_blank">Pelajaran 10</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1NWw4jeTNkxKbQydV8ytFE6P41eRbgMnP/view" target="_blank">Pelajaran 11</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1mNBIpNYm-q0dZRliW8BVDwDqMxfOFh2R/view" target="_blank">Pelajaran 12</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/13OOtl96WrGOBH6ZjG_r1V1JvA3LLtXb4/view" target="_blank">Pelajaran 13</a></div>
+  </section>
+
+  <h2>Tingkatan 5</h2>
+  <section class="menu">
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1LvpEEFMu4vkUUQ-6jZb99pH8EuPw2TLx/view" target="_blank">Pelajaran 1</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1y3g0-npv8wv-PRByu7Dgu9Ecx0Umz_H8/view" target="_blank">Pelajaran 2</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1L2MQeO4kpaE5GJ7tnwP0g0g_A3FzqumD/view" target="_blank">Pelajaran 3</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1lPpzA_vh_VlyQMLdd0nT3EuJitTt81Xf/view" target="_blank">Pelajaran 4</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1sU9ZVVb7ugMAB9V9i-khlRgmauNED8og/view" target="_blank">Pelajaran 5</a></div>
+    <div class="menu-item"><a href="https://drive.google.com/file/d/1vQvZ9OshN3Vdwce-TvDs5mUB5tnDJz_m/view" target="_blank">Pelajaran 6</a></div>
+  </section>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('dropdown');
+      dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function toggleSubmenu(id) {
+      const submenu = document.getElementById(id);
+      submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function toggleMusic() {
+      const music = document.getElementById("background-music");
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
+</body>
+</html>
