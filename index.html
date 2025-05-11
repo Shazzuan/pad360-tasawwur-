@@ -236,8 +236,15 @@
         music.pause();
       }
     }
+    let playing=false ;
     function play() {
-      document.querySelector("#bgm").play() ;
+      if(!playing) {
+        playing=true ;
+        document.querySelector("#bgm").play() ;
+      } else {
+        pause() ;
+        playing=false ;
+      }
     }
     function pause() {
       document.querySelector("#bgm").pause() ;
@@ -247,6 +254,6 @@
   <button style="flex: 1;" onclick="play()">
     <img src="https://shazzuan.github.io/pad360-tasawwur-/musical-note.png" width="32px" height="32px"> 
   </button>
-      <button style="flex: 1;" onclick="pause()">PAUSE BGM</button>
+      
 </body>
 </html>
