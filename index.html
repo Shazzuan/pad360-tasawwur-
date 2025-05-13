@@ -186,12 +186,7 @@
   <img src="https://shazzuan.github.io/pad360-tasawwur-/joystick.png" width="25px" height="25px" alt="Play Quiz">
 </a> 
         <a href="#" onclick="toggleMusic()">Lagu</a>
-
-<div id="songList">
-  <a onclick="playSong('Lagu 1')">Lagu 1</a>
-  <a onclick="playSong('Lagu 2')">Lagu 2</a>
-  <a onclick="playSong('Lagu 3')">Lagu 3</a>
-</div>
+        
     </div>
   </div>
 
@@ -228,14 +223,6 @@
   </section>
 
   <script>
-    function toggleMusic() {
-    var list = document.getElementById("songList");
-    list.style.display = (list.style.display === "none" || list.style.display === "") ? "block" : "none";
-  }
-
-  function playSong(namaLagu) {
-    alert("Memainkan " + namaLagu);
-  }
     function toggleDropdown() {
       const dropdown = document.getElementById('dropdown');
       dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
