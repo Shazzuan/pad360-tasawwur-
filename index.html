@@ -93,7 +93,7 @@
     }
 
     /* SCROLLABLE KUIZ T4 SUBMENU */
-    #kuizT4, #kuizT5, #songT4, #songT5 {
+    #kuizT4, #kuizT5, #songT4, #songT5, #interactivegameT4, #interactivegameT5 {
       display: none;
       flex-direction: column;
       margin-top: 10px;
@@ -163,7 +163,8 @@
           <a href="https://docs.google.com/forms/d/e/1FAIpQLScUvwHxXC42eJhjXGTEcyySbF0Oyp4nDtJ2dz9Ol6at4O3x6g/viewform" target="_blank">Pelajaran 12</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLScMcnKMNrldkhqbltWHaXoqkF0vLbEkJ_EJ_xMJps-Wnav3eg/viewform" target="_blank">Pelajaran 13</a>
         </div>
-        <a href="#" onclick="toggle()">Permainan Interaktif</a>
+        <a href="#" onclick="toggleSubmenu('interactivegameT4')">Permainan Interaktif</a>
+        <div id="interactivegameT4" class="submenu">
           <a href="https://quiz.zep.us/en/play/r75amg" target="_blank" rel="noopener noreferrer">
             <img src="assets/joystick.png" width="25px" height="25px" alt="Play Quiz">
           </a>
@@ -196,7 +197,8 @@
           <a href="https://docs.google.com/forms/d/e/1FAIpQLScHhQLUZZdym2b5Y5YmdG9gW2ihmwBmXAqQyduQGZj7sF-G2A/viewform?usp=header " target="_blank">Pelajaran 5</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOe580_qk66v0n0uyUlQXdcRCVELdo2bACsHvMzA9NHfuszw/viewform?usp=header " target="_blank">Pelajaran 6</a>
         </div>
-        <a href="#" onclick="toggleMusic()">Permainan Interaktif</a>
+        <a href="#" onclick="toggleSubmenu('interactivegameT5')">Permainan Interaktif</a>
+        <div id="interactivegameT5" class="submenu">
           <a href="https://quiz.zep.us/en/play/r75amm" target="_blank" rel="noopener noreferrer">
             <img src="assets/joystick.png" width="25px" height="25px" alt="Play Quiz">
           </a>
