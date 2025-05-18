@@ -247,8 +247,13 @@
   </section>
 
   <script>
+    let firstClick = true;
+    
     window.onclick = () => {
-      play();
+      if (firstClick) {
+        play();
+        firstClick = false;
+      }
     }
 
     function toggleDropdown() {
@@ -270,23 +275,28 @@
       }
     }
 
-    let playing=false ;
+    let playing = false;
+    
     function play() {
       if(!playing) {
-        playing=true ;
-        document.querySelector("#bgm").play() ;
+        playing = true ;
+        document.querySelector("#bgm").play();
       } else {
-        //pause() ;
-        //playing=false ;
+        pause();
+        playing = false;
       }
     }
 
     function changeSong(url) {
       let bgm = document.querySelector("#bgm");
 
-      bgm.src = url;
-      bgm.load();
-      bgm.play();
+      if (!bgm.src.toString().includes(url)) {
+        bgm.src = url;
+        bgm.load();
+        playing = false;
+      }
+      
+      play();
     }
 
     function pause() {
@@ -294,9 +304,9 @@
     }
   </script>
   <audio style="display: none;" id="bgm" src="audio/bgm.mp3" loop></audio>
-  <!--button style="flex: 1;" onclick="play()">
+  <button style="flex: 1;" onclick="play()">
     <img src="assets/musical-note.png" width="32px" height="32px"> 
-  </button-->
+  </button>
       
 </body>
 </html>
