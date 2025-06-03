@@ -2,21 +2,25 @@
 <html lang="ms">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PAD360 PEMBELAJARAN INTERAKTIF DIGITAL</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI ', sans-serif;
       background: linear-gradient(to right, #1e3c72, #2a5298);
       color: white;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
+      position: relative;
     }
     header {
       text-align: center;
       padding: 2rem;
       background: rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 2;
     }
     h1 {
       font-size: 2.5rem;
@@ -53,6 +57,7 @@
       border-radius: 10px;
       display: none;
       flex-direction: column;
+      z-index: 1000;
     }
     .dropdown a {
       color: #fff;
@@ -69,10 +74,10 @@
       background-color: #ffe15c;
     }
     .dropdown a.tingkatan4 {
-      background-color: #b0bec5; /* Kelabu terang lebih gelap untuk Tingkatan 4 */
+      background-color: #b0bec5;
     }
     .dropdown a.tingkatan5 {
-      background-color: #cfd8dc; /* Kelabu terang lebih cerah untuk Tingkatan 5 */
+      background-color: #cfd8dc;
     }
     .submenu {
       display: none;
@@ -101,6 +106,8 @@
     }
     section.menu {
       padding: 2rem;
+      position: relative;
+      z-index: 2;
     }
     .menu-item {
       background: rgba(255,255,255,0.15);
@@ -110,6 +117,7 @@
       cursor: pointer;
       font-family: 'Times New Roman', Times, serif;
       font-size: 1.1rem;
+      text-align: center; /* Centre text for Pelajaran */
     }
     .menu-item:hover {
       background: rgba(255,255,255,0.25);
@@ -142,14 +150,57 @@
       text-align: center;
       border-bottom: 2px solid #fff;
       margin-top: 3rem;
+      position: relative;
+      z-index: 2;
     }
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+    .snowflake {
+      position: absolute;
+      top: -10px;
+      color: #fff;
+      font-size: 1em;
+      opacity: 0.7;
+      pointer-events: none;
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0.2;
+      }
+    }
+    .snowflake:nth-child(1) { left: 5%; animation-duration: 10s; animation-delay: 0s; }
+    .snowflake:nth-child(2) { left: 15%; animation-duration: 12s; animation-delay: 1s; transform: translateX(10px); }
+    .snowflake:nth-child(3) { left: 25%; animation-duration: 8s; animation-delay: 2s; }
+    .snowflake:nth-child(4) { left: 35%; animation-duration: 11s; animation-delay: 0.5s; transform: translateX(-15px); }
+    .snowflake:nth-child(5) { left: 45%; animation-duration: 9s; animation-delay: 3s; }
+    .snowflake:nth-child(6) { left: 55%; animation-duration: 13s; animation-delay: 1.5s; transform: translateX(20px); }
+    .snowflake:nth-child(7) { left: 65%; animation-duration: 10s; animation-delay: 2.5s; }
+    .snowflake:nth-child(8) { left: 75%; animation-duration: 12s; animation-delay: 0s; transform: translateX(-10px); }
+    .snowflake:nth-child(9) { left: 85%; animation-duration: 9s; animation-delay: 1s; }
+    .snowflake:nth-child(10) { left: 95%; animation-duration: 11s; animation-delay: 2s; transform: translateX(15px); }
   </style>
 </head>
 <body>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+
   <div class="menu-button">
     <button onclick="toggleDropdown()">MENU</button>
     <div id="dropdown" class="dropdown">
@@ -221,7 +272,7 @@
       Pelajaran 5
       <div id="pelajaran4-5" class="menu-item-submenu">
         <a href="https://drive.google.com/file/d/1EeK9plVRfKInqySYPa3GRWw7khjP0Q_z/view" target="_blank">Nota</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSevZzbo_3FDOh7yRoKWZHUpikJcKxtdBj6CdCgKV_0mQg8BjQ/viewform" target="_blank">Kuiz</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSevZzbo_3Dblh7yRoKWZHUpikJcKxtdBj6CdCgKV0mQgg8BjQ/viewform" target="_blank">Kuiz</a>
         <a href="#" onclick="changeSong('audio/4-5.mp3')">Lagu</a>
       </div>
     </div>
@@ -297,7 +348,7 @@
       Pelajaran 1
       <div id="pelajaran5-1" class="menu-item-submenu">
         <a href="https://drive.google.com/file/d/1LvpEEFMu4vkUUQ-6jZb99pH8EuPw2TLx/view" target="_blank">Nota</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehvxevGugPozyFo064W7Ypq3q_YLge653vzpWTiSBMoWVDb1Q/viewform?usp=header" target="_blank">Kuiz</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehvxevGugPozyFo064_7pq3q_YLge653vzpWTiSBMoWVDb1Q/viewform?usp=header" target="_blank">Kuiz</a>
         <a href="#" onclick="changeSong('audio/5-1.mp3')">Lagu</a>
       </div>
     </div>
