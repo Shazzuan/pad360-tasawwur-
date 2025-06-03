@@ -22,7 +22,6 @@
       font-size: 2.5rem;
       animation: bounce 3s infinite;
     }
-
     .menu-button {
       position: fixed;
       top: 10px;
@@ -45,7 +44,6 @@
       color: white;
       cursor: pointer;
     }
-
     .dropdown {
       position: fixed;
       top: 60px;
@@ -90,8 +88,6 @@
       text-align: center;
       font-size: 0.9rem;
     }
-
-    /* SCROLLABLE KUIZ T4 SUBMENU */
     #kuizT4, #kuizT5, #songT4, #songT5, #interactivegameT4, #interactivegameT5 {
       display: none;
       flex-direction: column;
@@ -103,7 +99,6 @@
       padding: 5px;
       border-radius: 8px;
     }
-
     section.menu {
       padding: 2rem;
     }
@@ -155,13 +150,10 @@
   </style>
 </head>
 <body>
-
-
-  <!-- MENU BUTTON -->
   <div class="menu-button">
     <button onclick="toggleDropdown()">MENU</button>
     <div id="dropdown" class="dropdown">
-      <a href="#" onclick="toggleSubmenu('submenu4')">Tingkatan 4</a>
+      <a href="#" onclick="toggleSubmenu('submenu4')" class="tingkatan4">Tingkatan 4</a>
       <div id="submenu4" class="submenu">
         <a href="#" onclick="toggleSubmenu('interactivegameT4')">Permainan Interaktif</a>
         <div id="interactivegameT4" class="submenu">
@@ -169,9 +161,9 @@
             <img src="assets/joystick.png" width="25px" height="25px" alt="Play Quiz">
           </a>
         </div> 
-       <a href="https://drive.google.com/file/d/1Omu4rms6Gtpzw-FHeia36I974FwKlxzT/view?usp=sharing" target="_blank">Nota Padat</a>
+        <a href="https://drive.google.com/file/d/1Omu4rms6Gtpzw-FHeia36I974FwKlxzT/view?usp=sharing" target="_blank">Nota Padat</a>
       </div>
-      <a href="#" onclick="toggleSubmenu('submenu5')">Tingkatan 5</a>
+      <a href="#" onclick="toggleSubmenu('submenu5')" class="tingkatan5">Tingkatan 5</a>
       <div id="submenu5" class="submenu">  
         <a href="#" onclick="toggleSubmenu('interactivegameT5')">Permainan Interaktif</a>
         <div id="interactivegameT5" class="submenu">
@@ -179,10 +171,8 @@
             <img src="assets/joystick.png" width="25px" height="25px" alt="Play Quiz">
           </a>
         </div>
-        <a href="https://drive.google.com/file/d/1_-B3HasaWAzxvhRLZKUDtNZigWADywyJ/view?usp=drive_link" target="_blank">Nota Padat</a>
-      </div>
         <a href="https://drive.google.com/file/d/1vdLLBWDdJJmKZ06YnPs-yuooUEWSY0lu/view?usp=sharing" target="_blank">Kamus Istilah</a>
-       </div>   
+      </div>   
     </div>
   </div>
 
@@ -305,7 +295,7 @@
       Pelajaran 1
       <div id="pelajaran5-1" class="menu-item-submenu">
         <a href="https://drive.google.com/file/d/1LvpEEFMu4vkUUQ-6jZb99pH8EuPw2TLx/view" target="_blank">Nota</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehvxevGugPozyFo064_7pq3q_YLge653vzpWTiSBMoWVDb1Q/viewform?usp=header" target="_blank">Kuiz</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehvxevGugPozyFo064W7Ypq3q_YLge653vzpWTiSBMoWVDb1Q/viewform?usp=header" target="_blank">Kuiz</a>
         <a href="#" onclick="changeSong('audio/5-1.mp3')">Lagu</a>
       </div>
     </div>
@@ -351,6 +341,11 @@
     </div>
   </section>
 
+  <audio style="display: none;" id="bgm" src="audio/bgm.mp3" loop></audio>
+  <button style="flex: 1;" onclick="play()">
+    <img src="assets/musical-note.png" width="32px" height="32px"> 
+  </button>
+
   <script>
     let firstClick = true;
     
@@ -372,7 +367,7 @@
     }
 
     function toggleMusic() {
-      const music = document.getElementById("background-music");
+      const music = document.getElementById("bgm");
       if (music.paused) {
         music.play();
       } else {
@@ -383,8 +378,8 @@
     let playing = false;
     
     function play() {
-      if(!playing) {
-        playing = true ;
+      if (!playing) {
+        playing = true;
         document.querySelector("#bgm").play();
       } else {
         pause();
@@ -394,24 +389,17 @@
 
     function changeSong(url) {
       let bgm = document.querySelector("#bgm");
-
       if (!bgm.src.toString().includes(url)) {
         bgm.src = url;
         bgm.load();
         playing = false;
       }
-      
       play();
     }
 
     function pause() {
-      document.querySelector("#bgm").pause() ;
+      document.querySelector("#bgm").pause();
     }
   </script>
-  <audio style="display: none;" id="bgm" src="audio/bgm.mp3" loop></audio>
-  <button style="flex: 1;" onclick="play()">
-    <img src="assets/musical-note.png" width="32px" height="32px"> 
-  </button>
-      
 </body>
 </html>
