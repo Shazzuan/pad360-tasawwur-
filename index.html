@@ -8,7 +8,9 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
+      background: linear-gradient(45deg, #1e3c72, #2a5298, #6b48ff, #1e3c72);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
       color: white;
       margin: 0;
       padding: 0;
@@ -16,10 +18,15 @@
       position: relative;
       height: 100vh;
     }
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
     header {
       text-align: center;
       padding: 2rem;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.5);
       position: relative;
       z-index: 2;
     }
@@ -184,19 +191,29 @@
         opacity: 0.2;
       }
     }
-    .snowflake:nth-child(1) { left: 5%; animation-duration: 10s; animation-delay: 0s; }
-    .snowflake:nth-child(2) { left: 15%; animation-duration: 12s; animation-delay: 1s; transform: translateX(10px); }
-    .snowflake:nth-child(3) { left: 25%; animation-duration: 8s; animation-delay: 2s; }
-    .snowflake:nth-child(4) { left: 35%; animation-duration: 11s; animation-delay: 0.5s; transform: translateX(-15px); }
-    .snowflake:nth-child(5) { left: 45%; animation-duration: 9s; animation-delay: 3s; }
-    .snowflake:nth-child(6) { left: 55%; animation-duration: 13s; animation-delay: 1.5s; transform: translateX(20px); }
-    .snowflake:nth-child(7) { left: 65%; animation-duration: 10s; animation-delay: 2.5s; }
-    .snowflake:nth-child(8) { left: 75%; animation-duration: 12s; animation-delay: 0s; transform: translateX(-10px); }
-    .snowflake:nth-child(9) { left: 85%; animation-duration: 9s; animation-delay: 1s; }
-    .snowflake:nth-child(10) { left: 95%; animation-duration: 11s; animation-delay: 2s; transform: translateX(15px); }
+    .snowflake:nth-child(1) { left: 5%; animation-duration: 10s; animation-delay: 0s; font-size: 1.2em; }
+    .snowflake:nth-child(2) { left: 15%; animation-duration: 12s; animation-delay: 1s; transform: translateX(10px); font-size: 0.8em; }
+    .snowflake:nth-child(3) { left: 25%; animation-duration: 8s; animation-delay: 2s; font-size: 1.5em; }
+    .snowflake:nth-child(4) { left: 35%; animation-duration: 11s; animation-delay: 0.5s; transform: translateX(-15px); font-size: 0.9em; }
+    .snowflake:nth-child(5) { left: 45%; animation-duration: 9s; animation-delay: 3s; font-size: 1.1em; }
+    .snowflake:nth-child(6) { left: 55%; animation-duration: 13s; animation-delay: 1.5s; transform: translateX(20px); font-size: 1.3em; }
+    .snowflake:nth-child(7) { left: 65%; animation-duration: 10s; animation-delay: 2.5s; font-size: 0.7em; }
+    .snowflake:nth-child(8) { left: 75%; animation-duration: 12s; animation-delay: 0s; transform: translateX(-10px); font-size: 1.4em; }
+    .snowflake:nth-child(9) { left: 85%; animation-duration: 9s; animation-delay: 1s; font-size: 0.8em; }
+    .snowflake:nth-child(10) { left: 95%; animation-duration: 11s; animation-delay: 2s; transform: translateX(15px); font-size: 1.2em; }
+    .snowflake:nth-child(11) { left: 10%; animation-duration: 14s; animation-delay: 0.3s; font-size: 1em; }
+    .snowflake:nth-child(12) { left: 20%; animation-duration: 10s; animation-delay: 1.2s; transform: translateX(-5px); font-size: 1.3em; }
+    .snowflake:nth-child(13) { left: 30%; animation-duration: 12s; animation-delay: 2.5s; font-size: 0.9em; }
+    .snowflake:nth-child(14) { left: 40%; animation-duration: 9s; animation-delay: 0.8s; transform: translateX(10px); font-size: 1.1em; }
+    .snowflake:nth-child(15) { left: 50%; animation-duration: 11s; animation-delay: 1.7s; font-size: 1.5em; }
   </style>
 </head>
 <body>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❄</div>
   <div class="snowflake">❄</div>
   <div class="snowflake">❄</div>
   <div class="snowflake">❄</div>
