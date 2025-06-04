@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PAD360 PEMBELAJARAN INTERAKTIF DIGITAL</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(45deg, #1e3c72, #2a5298);
       color: white;
       margin: 0;
@@ -18,29 +19,66 @@
     }
     header {
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 2rem;
       background: rgba(0, 0, 0, 0.5);
       position: relative;
       z-index: 10;
+      border-bottom: 3px solid rgba(255, 255, 255, 0.2);
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(107, 72, 255, 0.5);
       animation: bounce 3s infinite;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    header p:nth-child(2) {
+      position: relative;
+      display: inline-block;
+    }
+    header p:nth-child(2)::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #f0db4f;
+      animation: underline 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes underline {
+      0% { width: 0; }
+      50% { width: 100%; }
+      100% { width: 0; }
     }
     .menu-button {
       position: fixed;
-      top: 10px;
-      left: 10px;
+      top: 15px;
+      left: 15px;
       z-index: 1000;
     }
     .menu-button button {
       background-color: #f0db4f;
       color: #000;
-      padding: 0.7rem 1.2rem;
+      padding: 0.8rem 1.5rem;
       border: none;
-      border-radius: 8px;
-      font-weight: bold;
+      border-radius: 10px;
+      font-weight: 700;
       cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .menu-button button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(240, 219, 79, 0.6);
     }
     .music-button button {
       background-color: transparent;
@@ -51,8 +89,8 @@
     }
     .dropdown {
       position: fixed;
-      top: 60px;
-      left: 10px;
+      top: 70px;
+      left: 15px;
       background-color: rgba(255, 255, 255, 0.2);
       padding: 10px;
       border-radius: 10px;
@@ -112,34 +150,31 @@
       padding: 2rem;
       position: relative;
       z-index: 2;
-      background: linear-gradient(45deg, #1e3c72, #2a5298, #6b48ff, #1e3c72);
-      background-size: 400% 400%;
-      animation: gradientAnimationT4 15s ease infinite;
+      background: linear-gradient(135deg, rgba(255, 0, 0, 0.6), rgba(0, 255, 0, 0.6), rgba(0, 0, 255, 0.6));
+      background-size: 300% 300%;
+      animation: rgbAnimation 8s ease infinite;
       border-radius: 12px;
       margin: 1rem;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
     section.menu.tingkatan5 {
       padding: 2rem;
       position: relative;
       z-index: 2;
-      background: linear-gradient(45deg, #2a9d8f, #48cae4, #90e0ef, #2a9d8f);
-      background-size: 400% 400%;
-      animation: gradientAnimationT5 12s ease infinite;
+      background: linear-gradient(135deg, rgba(0, 255, 0, 0.6), rgba(0, 0, 255, 0.6), rgba(255, 0, 0, 0.6));
+      background-size: 300% 300%;
+      animation: rgbAnimation 8s ease infinite;
       border-radius: 12px;
       margin: 1rem;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
-    @keyframes gradientAnimationT4 {
+    @keyframes rgbAnimation {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    @keyframes gradientAnimationT5 {
-      0% { background-position: 100% 50%; }
-      50% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
     .menu-item {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       border-radius: 12px;
       padding: 1rem;
       margin-bottom: 1rem;
@@ -149,7 +184,7 @@
       text-align: center;
     }
     .menu-item:hover {
-      background: rgba(255,255,255,0.25);
+      background: rgba(255, 255, 255, 0.25);
       transform: scale(1.03);
     }
     .menu-item-submenu {
@@ -185,10 +220,6 @@
       position: relative;
       z-index: 2;
     }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
     .snowflake {
       position: absolute;
       top: -10px;
@@ -196,6 +227,15 @@
       opacity: 0.7;
       pointer-events: none;
       animation: fall linear infinite;
+      z-index: 1;
+    }
+    .sparkle {
+      position: absolute;
+      color: #f0db4f;
+      font-size: 0.6em;
+      opacity: 0.8;
+      pointer-events: none;
+      animation: sparkle 3s linear infinite;
       z-index: 1;
     }
     .star {
@@ -216,6 +256,20 @@
       100% {
         transform: translateY(100vh);
         opacity: 0.2;
+      }
+    }
+    @keyframes sparkle {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+      }
+      50% {
+        transform: translateY(20px) scale(1.5);
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(40px) scale(1);
+        opacity: 0;
       }
     }
     @keyframes twinkle {
@@ -247,6 +301,11 @@
     .snowflake:nth-child(13) { left: 30%; animation-duration: 12s; animation-delay: 2.5s; font-size: 0.9em; }
     .snowflake:nth-child(14) { left: 40%; animation-duration: 9s; animation-delay: 0.8s; transform: translateX(10px); font-size: 1.1em; }
     .snowflake:nth-child(15) { left: 50%; animation-duration: 11s; animation-delay: 1.7s; font-size: 1.5em; }
+    .sparkle:nth-child(16) { left: 20%; top: 10%; animation-duration: 2s; animation-delay: 0s; }
+    .sparkle:nth-child(17) { left: 30%; top: 15%; animation-duration: 2.5s; animation-delay: 0.5s; }
+    .sparkle:nth-child(18) { left: 70%; top: 12%; animation-duration: 2s; animation-delay: 1s; }
+    .sparkle:nth-child(19) { left: 80%; top: 20%; animation-duration: 3s; animation-delay: 0.3s; }
+    .sparkle:nth-child(20) { left: 50%; top: 8%; animation-duration: 2.2s; animation-delay: 0.7s; }
     .tingkatan5 .star:nth-child(1) { left: 8%; animation-duration: 8s; animation-delay: 0s; font-size: 0.7em; }
     .tingkatan5 .star:nth-child(2) { left: 18%; animation-duration: 10s; animation-delay: 1s; transform: translateX(5px); font-size: 0.9em; }
     .tingkatan5 .star:nth-child(3) { left: 28%; animation-duration: 7s; animation-delay: 2s; font-size: 1.1em; }
@@ -275,6 +334,11 @@
   <div class="snowflake">❄</div>
   <div class="snowflake">❄</div>
   <div class="snowflake">❄</div>
+  <div class="sparkle">✨</div>
+  <div class="sparkle">✨</div>
+  <div class="sparkle">✨</div>
+  <div class="sparkle">✨</div>
+  <div class="sparkle">✨</div>
   <div class="star tingkatan5">✦</div>
   <div class="star tingkatan5">✦</div>
   <div class="star tingkatan5">✦</div>
@@ -308,9 +372,8 @@
           </a>
         </div>
         <a href="https://drive.google.com/file/d/1_-B3HasaWAzxvhRLZKUDtNZigWADywyJ/view?usp=drive_link" target="_blank">Nota Padat</a>
-        </div>
-        <a href="https://drive.google.com/file/d/1vdLLBWDdJJmKZ06YnPs-yuooUEWSY0lu/view?usp=sharing" target="_blank" class="kamus-istilah">Kamus Istilah</a>
       </div>
+      <a href="https://drive.google.com/file/d/1vdLLBWDdJJmKZ06YnPs-yuooUEWSY0lu/view?usp=sharing" target="_blank" class="kamus-istilah">Kamus Istilah</a>
     </div>
   </div>
 
@@ -398,7 +461,7 @@
       Pelajaran 10
       <div id="pelajaran4-10" class="menu-item-submenu">
         <a href="https://drive.google.com/file/d/1bxUcdxKcZZSjUo1S3zPU8POXBPKjpi6f/view" target="_blank"><i class="fas fa-book"></i> Nota</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSctrPZTWS_GUlqmU19ciKxsn2CKQxOpQ1-URh7vTsoKUZycfw/viewform" target="_blank"><i class="fas fa-question-circle"></i> Kuiz</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSctrPZTWS_GUlUc19qKxsn2CKQxOpQ1-URh7vTsoKUZycfw/viewform" target="_blank"><i class="fas fa-question-circle"></i> Kuiz</a>
         <a href="#" onclick="changeSong('audio/4-10.mp3')"><i class="fas fa-music"></i> Lagu</a>
       </div>
     </div>
