@@ -26,7 +26,7 @@
       border-bottom: 3px solid rgba(255, 255, 255, 0.2);
     }
     h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(107, 72, 255, 0.5);
       animation: bounce 3s infinite;
@@ -316,6 +316,17 @@
     .tingkatan5 .star:nth-child(8) { left: 78%; animation-duration: 12s; animation-delay: 1.2s; transform: translateX(-5px); font-size: 1.2em; }
     .tingkatan5 .star:nth-child(9) { left: 88%; animation-duration: 9s; animation-delay: 0.8s; font-size: 0.8em; }
     .tingkatan5 .star:nth-child(10) { left: 98%; animation-duration: 11s; animation-delay: 1.7s; transform: translateX(10px); font-size: 1em; }
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      header {
+        padding: 2rem 1rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -461,7 +472,7 @@
       Pelajaran 10
       <div id="pelajaran4-10" class="menu-item-submenu">
         <a href="https://drive.google.com/file/d/1bxUcdxKcZZSjUo1S3zPU8POXBPKjpi6f/view" target="_blank"><i class="fas fa-book"></i> Nota</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSctrPZTWS_GUlUc19qKxsn2CKQxOpQ1-URh7vTsoKUZycfw/viewform" target="_blank"><i class="fas fa-question-circle"></i> Kuiz</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSctrPZTWS_GUlqmU19qKxsn2CKQxOpQ1-URh7vTsoKUZycfw/viewform" target="_blank"><i class="fas fa-question-circle"></i> Kuiz</a>
         <a href="#" onclick="changeSong('audio/4-10.mp3')"><i class="fas fa-music"></i> Lagu</a>
       </div>
     </div>
